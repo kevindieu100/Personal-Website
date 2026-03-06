@@ -22,6 +22,12 @@ interface ErrorResponse {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse<SuccessResponse | ErrorResponse>> {
+  // Check API key first
+  if (!process.env.ELEVENLABS_API_KEY) {
+    console.error('ELEVENLABS_API_KEY not found in environment');
+    return NextResponse.json({ error: 'Server configuration error: API key missing' }, { status: 500 });
+  }
+
   try {
     const body: RequestBody = await request.json();
     const { url, voiceId, tone = 'neutral' } = body;
@@ -77,9 +83,12 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
     });
   } catch (err) {
     console.error('Wikipodcast API error:', err);
+    const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred';
     return NextResponse.json(
-      { error: 'An unexpected error occurred' },
+      { error: errorMessage },
       { status: 500 }
     );
   }
 }
+
+export const maxDuration = 30;
