@@ -74,7 +74,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
       console.log('[wikipodcast] Wikipedia fetch error:', articleResult.error);
       return NextResponse.json({ error: articleResult.error }, { status: 400 });
     }
-    console.log('[wikipodcast] Article fetched:', articleResult.title, 'Length:', articleResult.extract?.length);
+    console.log('[wikipodcast] Article fetched:', articleResult.title, 'Content length:', articleResult.content?.length);
 
     // Generate podcast script
     console.log('[wikipodcast] Generating script...');
