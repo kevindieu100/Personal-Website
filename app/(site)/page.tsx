@@ -1,5 +1,4 @@
 import { Accent } from '@/components/Accent';
-import { ElevenLabsWidget } from '@/components/ElevenLabsWidget';
 
 export default function HomePage() {
   return (
@@ -22,7 +21,6 @@ export default function HomePage() {
         </p>
         <p>Now I&apos;m looking for what to build next.</p>
       </div>
-      <ElevenLabsWidget />
     </article>
   );
 }
