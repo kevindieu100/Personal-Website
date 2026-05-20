@@ -4,10 +4,10 @@ export default function ElevenLabsPage() {
   return (
     <article>
       <h1 className="font-serif text-4xl font-normal leading-tight text-gray-900 mb-4 md:text-5xl">
-        ElevenLabs Demos
+        Demo playground
       </h1>
       <p className="text-gray-600 text-lg mb-12 max-w-2xl">
-        Building voices that enhance the human experience. From making knowledge more accessible to creating natural shopping conversations.
+        Kevin's thought exercises to build more meaningful AI experiences.
       </p>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">

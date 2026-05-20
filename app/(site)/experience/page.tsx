@@ -15,7 +15,7 @@ const experiences = [
   },
   {
     company: 'ReachFaster',
-    role: 'Founding GTM Product Engineer',
+    role: 'Product Manager',
     years: '2025',
     isToday: false,
   },
